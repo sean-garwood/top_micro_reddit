@@ -3,4 +3,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 50 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
+
+  has_many :posts
+  has_many :comments, through: :posts
 end
