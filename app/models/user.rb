@@ -5,5 +5,5 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
   has_many :posts
-  has_many :comments, through: :posts
+  has_many :comments
 end
